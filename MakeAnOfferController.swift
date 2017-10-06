@@ -11,7 +11,6 @@ import UIKit
 class MakeAnOfferController: UIViewController {
     
     @IBOutlet var verticalCollectionView: UICollectionView!
-    var ve:Vehicle?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +21,6 @@ class MakeAnOfferController: UIViewController {
         
         // Do any additional setup after loading the view.
         verticalCollectionView.dataSource = self as UICollectionViewDataSource
-//        verticalCollectionView.delegate = self as! UICollectionViewDelegate
         
         let layout = verticalCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0)
@@ -45,7 +43,6 @@ extension MakeAnOfferController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        let cell = verticalCollectionView.dequeueReusableCell(withReuseIdentifier: "ReviseOfferCell", for: indexPath) as! ReviseOfferCell
         let cell = verticalCollectionView.dequeueReusableCell(withReuseIdentifier: "ReviseOfferCell", for: indexPath)
         cell.backgroundColor = UIColor.white
         return cell
@@ -93,6 +90,5 @@ extension MakeAnOfferController: UICollectionViewDelegateFlowLayout {
         } else {
             return CGSize(width:collectionView.frame.size.width, height:100)
         }
-
     }
 }
